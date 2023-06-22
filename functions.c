@@ -17,6 +17,7 @@ char **tokenize_line(char *str)
 	if (con_tokens == NULL)
 	{
 		fprintf(stdout, "Error: Malloc failed\n");
+		args.found_error = EXIT_FAILURE;
 		return (NULL);
 	}
 	token = strtok(str, delim);
