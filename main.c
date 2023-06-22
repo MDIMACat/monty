@@ -28,8 +28,6 @@ int main(int argc, char *argv[])
 	get_stream(argv[1]);
 	while ((read = fgets(line, len, args.file)) != NULL)
 	{
-		if (args.found_error == 1)
-			break;
 		line_number++;
 		line_length = strlen(line);
 		if (line_length > 0 && line[line_length - 1] == '\n')
@@ -38,6 +36,8 @@ int main(int argc, char *argv[])
 		args.tokens = tokenize_line(line);
 		execute_opcode(&stack, line_number);
 		free(args.tokens);
+		if (args.found_error == 1)
+			break;
 	}
 	fclose(args.file);
 	free_stack(stack);
