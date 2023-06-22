@@ -38,15 +38,3 @@ void fpush(stack_t **stack, unsigned int line_number)
 	*stack = new_node;
 }
 
-/**
- * fnop - does nothing
- * @stack: pointer to stack
- * @line_number: line pointer parameter
- * Return: Void
-*/
-
-void fnop(stack_t **stack, unsigned int line_number)
-{
-	(void) stack;
-	(void) line_number;
-}

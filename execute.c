@@ -11,15 +11,16 @@ void execute_opcode(stack_t **stack, unsigned int line_number)
 
 	instruction_t instruction[] = {
 		{"push", fpush}, {"pall", fpall},
-		{"pint", fpint}, {"nop", fnop},
+		{"pint", fpint}, {"nop", NULL},
 		{"swap", fswap}, {"pop", fpop},
-		{"add", fadd}, {NULL, NULL}};
+		{"add", fadd}, {NULL, NULL},
+		};
 
 	if (!args.tokens || !args.tokens[0])
 	return;
 	while (instruction[i].opcode != NULL)
 	{
-		if (strcmp(instruction[i].opcode, args.tokens[0]) == 0 && instruction[i].f)
+		if (strcmp(instruction[i].opcode, args.tokens[0]) == 0)
 		{
 			if (strcmp(args.tokens[0], "push") == 0)
 			{
@@ -28,7 +29,8 @@ void execute_opcode(stack_t **stack, unsigned int line_number)
 			}
 			else
 			{
-				instruction[i].f(stack, line_number);
+				if (instruction[i].f != NULL)
+					instruction[i].f(stack, line_number);
 			}
 			return;
 		}
