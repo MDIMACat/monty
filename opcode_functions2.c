@@ -11,7 +11,7 @@ void fpush(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 	int value_node;
 
-	if (!args.value)
+	if (!args.value || isNotInteger(args.value) == 1)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		args.found_error = EXIT_FAILURE;
@@ -21,7 +21,7 @@ void fpush(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		fprintf(stderr, "Error: Malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		args.found_error = EXIT_FAILURE;
 		return;
 	}
@@ -38,3 +38,26 @@ void fpush(stack_t **stack, unsigned int line_number)
 	*stack = new_node;
 }
 
+/**
+ * isNotInteger - checks is the str provides a digit
+ * @str: string pointer parameter
+ * Return: 1 if not a number and 0 if a number
+*/
+
+int isNotInteger(char *str)
+{
+	int status = 0, index = 0;
+
+	while (str[index] != '\0')
+	{
+		if (str[index] == '-' || isdigit(str[index]))
+		{
+			index++;
+			continue;
+		}
+		status = 1;
+		break;
+	}
+	return (status);
+
+}

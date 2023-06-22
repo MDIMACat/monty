@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -70,6 +71,7 @@ void fpint(stack_t **stack, unsigned int line_number);
 void fswap(stack_t **stack, unsigned int line_number);
 void fpop(stack_t **stack, unsigned int line_number);
 void fadd(stack_t **stack, unsigned int line_number);
+int isNotInteger(char *str);
 extern arg_t args;
 
 #endif
