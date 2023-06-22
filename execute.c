@@ -34,6 +34,6 @@ void execute_opcode(stack_t **stack, unsigned int line_number)
 		}
 		i++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s,\n", line_number, args.tokens[0]);
+	fprintf(stderr, "L%d:unknown instruction %s,\n", line_number, args.tokens[0]);
 	args.found_error = EXIT_FAILURE;
 }
