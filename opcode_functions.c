@@ -110,6 +110,10 @@ void fpall(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 
+	if (stack == NULL)
+	{
+		return;
+	}
 	while (temp != NULL)
 	{
 		fprintf(stdout, "%d\n", temp->n);

@@ -70,6 +70,7 @@ void fpint(stack_t **stack, unsigned int line_number);
 void fswap(stack_t **stack, unsigned int line_number);
 void fpop(stack_t **stack, unsigned int line_number);
 void fadd(stack_t **stack, unsigned int line_number);
+void fnop(stack_t **stack, unsigned int line_number);
 extern arg_t args;
 
 #endif
