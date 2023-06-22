@@ -7,7 +7,7 @@
 */
 
 char **tokenize_line(char *str);
-arg_t args = {NULL, NULL, NULL, NULL, 0, 0, 0};
+arg_t args = {NULL, NULL, NULL, NULL, 0, 0, 0, 0};
 
 /**
  * main - main function

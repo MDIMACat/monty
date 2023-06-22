@@ -11,7 +11,7 @@ void fpush(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 	int value_node;
 
-	if (!args.value)
+	if ((!args.value) || args->tokens_count <= 1)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		args.found_error = EXIT_FAILURE;
@@ -36,5 +36,6 @@ void fpush(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 	}
 	*stack = new_node;
+	args->stack_len += 1;
 }
 
