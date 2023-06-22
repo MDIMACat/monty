@@ -13,7 +13,7 @@ void execute_opcode(stack_t **stack, unsigned int line_number)
 		{"push", fpush}, {"pall", fpall},
 		{"pint", fpint}, {"nop", NULL},
 		{"swap", fswap}, {"pop", fpop},
-		{"add", fadd}, {NULL, NULL},
+		{"add", fadd}, {NULL, NULL}
 		};
 
 	if (!args.tokens || !args.tokens[0])
