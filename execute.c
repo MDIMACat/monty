@@ -30,7 +30,9 @@ void execute_opcode(stack_t **stack, unsigned int line_number)
 			else
 			{
 				if (instruction[i].f != NULL)
+				{
 					instruction[i].f(stack, line_number);
+				}
 			}
 			return;
 		}
