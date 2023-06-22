@@ -42,7 +42,6 @@ typedef struct arg_s
 	unsigned int line_number;
 	int tokens_count;
 	int found_error;
-	int stack_len;
 } arg_t;
 
 /**
