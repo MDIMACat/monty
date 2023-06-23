@@ -17,7 +17,7 @@ void execute_opcode(stack_t **stack, unsigned int line_number)
 		};
 
 	if (!args.tokens || !args.tokens[0])
-	return;
+		return;
 	while (instruction[i].opcode != NULL)
 	{
 		if (strcmp(instruction[i].opcode, args.tokens[0]) == 0)
@@ -38,6 +38,8 @@ void execute_opcode(stack_t **stack, unsigned int line_number)
 		}
 		i++;
 	}
-	fprintf(stderr, "L%d:unknown instruction %s\n", line_number, args.tokens[0]);
+	fprintf(stderr, "L%d: unknown instruction %s\n",
+	line_number, args.tokens[0]);
 	args.found_error = EXIT_FAILURE;
 }
+ 

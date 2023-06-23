@@ -11,12 +11,12 @@ char **tokenize_line(char *str)
 	char *token = NULL;
 	int i = 0;
 	char **con_tokens = NULL;
-	char *delim = " \n\t";
+	char *delim = " \n\t\r";
 
 	con_tokens = malloc(sizeof(char *) * 3);
 	if (con_tokens == NULL)
 	{
-		fprintf(stdout, "Error: Malloc failed\n");
+		fprintf(stdout, "Error: malloc failed\n");
 		args.found_error = EXIT_FAILURE;
 		return (NULL);
 	}
