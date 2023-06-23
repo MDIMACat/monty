@@ -13,7 +13,7 @@ void fpush(stack_t **stack, unsigned int line_number)
 
 	if (!args.value || isNotInteger(args.value) == 1)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		args.found_error = EXIT_FAILURE;
 		return;
 	}
