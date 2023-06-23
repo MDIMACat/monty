@@ -61,3 +61,28 @@ int isNotInteger(char *str)
 	return (status);
 
 }
+
+/**
+ * fsub - does a subtraction operation on file
+ * @stack: stack pointer parameter
+ * @line_number: line number parameter
+ * Return: Error is small stack , sub if okay
+*/
+
+void fsub(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		args.found_error = EXIT_FAILURE;
+		return;
+	}
+
+	(*stack)->next->n -= (*stack)->n;
+	temp = *stack;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
+	free(temp);
+}
