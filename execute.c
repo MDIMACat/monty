@@ -42,4 +42,3 @@ void execute_opcode(stack_t **stack, unsigned int line_number)
 	line_number, args.tokens[0]);
 	args.found_error = EXIT_FAILURE;
 }
- 
