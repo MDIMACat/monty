@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 0;
 	size_t line_length;
 
-	check_command_line_arguments(argc, argv[1]);
+	check_command_line_arguments(argc);
 	get_stream(argv[1]);
 	while ((read = fgets(line, len, args.file)) != NULL)
 	{

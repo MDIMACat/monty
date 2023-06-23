@@ -47,24 +47,16 @@ void handle_file_open_error(const char *filename)
 /**
  * check_command_line_arguments - checks command line args
  * @argc: count parameter
- * @filename: filename parameter
  * Return: void
  */
 
-void check_command_line_arguments(int argc, char *filename)
+void check_command_line_arguments(int argc)
 {
-	const char *extension;
-
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
-	extension = strrchr(filename, '.');
-	if (extension == NULL || strcmp(extension, ".m") != 0)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
 }
+
+

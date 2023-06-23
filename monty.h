@@ -64,7 +64,7 @@ void get_stream(const char *filename);
 void execute_opcode(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 void handle_file_open_error(const char *filename);
-void check_command_line_arguments(int argc, char *filename);
+void check_command_line_arguments(int argc);
 void fpush(stack_t **stack, unsigned int line_number);
 void fpall(stack_t **stack, unsigned int line_number);
 void fpint(stack_t **stack, unsigned int line_number);
