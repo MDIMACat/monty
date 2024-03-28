@@ -11,8 +11,8 @@ files containing Monty byte codes usually have the .m extension. Most of the ind
 gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty
 
 ## Output
-Any output must be printed on stdout
-Any error message must be printed on stderr
+ - Any output must be printed on stdout
+ - Any error message must be printed on stderr
 
 ## Requirements
 
