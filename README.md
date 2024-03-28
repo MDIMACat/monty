@@ -15,5 +15,5 @@ gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty
  - Any error message must be printed on stderr
 
 ## AUTHORS
-Siduduzile SNenhlanhla Mdima
-Tshepiso Moilwe
+ - Siduduzile SNenhlanhla Mdima
+ - Tshepiso Moilwe
